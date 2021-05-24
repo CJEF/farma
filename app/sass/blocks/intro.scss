@@ -130,7 +130,7 @@
         transition: background-color .2s ease-in-out;
         &::before {
             content: '';
-            background-image: url('../../images/src/cart.svg');
+            background-image: url('../images/src/cart.svg');
             background-repeat: no-repeat;
             position: absolute;
             left: 28px;
@@ -156,6 +156,7 @@
         display: flex;
     }
     &-img {
+        height: auto;
         margin: 0 auto;
         @media (max-width: 760px) {
             width: 55%;
@@ -172,7 +173,7 @@
 }
 .swiper-pagination-clickable .swiper-pagination-bullet {
     width: 15px;
-    height: 15px;   
+    height: 15px;
 }
 .swiper-pagination-bullet-active {
     background-color: $steel-blue !important;
@@ -195,7 +196,7 @@
 
 .swiper-button-prev--second {
     display: none;
-    background-image: url('../../images/src/arrow-slider.svg');
+    background-image: url('../images/src/arrow-slider.svg');
     width: 13px;
     height: 31px;
     background-repeat: no-repeat;
@@ -209,7 +210,7 @@
 }
 .swiper-button-next--second {
     display: none;
-    background-image: url('../../images/src/arrow-slider.svg');
+    background-image: url('../images/src/arrow-slider.svg');
     width: 13px;
     height: 31px;
     background-repeat: no-repeat;
@@ -245,7 +246,7 @@
     //     top: 50%;
     //     left: 20px;
     // }
-    
+
     // .swiper-button-next-unique {
     //     cursor: pointer;
     //     width: 17px;
