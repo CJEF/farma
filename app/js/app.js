@@ -1,5 +1,6 @@
 const nextSlide = document.querySelector('.swiper-button-next--second');
 const prevSlide = document.querySelector('.swiper-button-prev--second');
+
 const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     loop: true,
@@ -20,16 +21,19 @@ const swiper = new Swiper('.swiper-container', {
         // prevE2: '.swiper-button-prev--second',
     },
 
-    breakpoints: {
-        1000: { /* when window >=0px - webflow mobile landscape/portriat */
-            navigation: {
-                // nextEl: '.swiper-button-next',
-                // prevEl: '.swiper-button-prev',
-                nextE1: '.swiper-button-next--second',
-                prevE1: '.swiper-button-prev--second',
-            },
-        },
-      },
+    nextButton: '.swiper-button-next--second',
+    prevButton: '.swiper-button-prev--second',
+
+    // breakpoints: {
+    //     1000: { /* when window >=0px - webflow mobile landscape/portriat */
+    //         navigation: {
+    //             // nextEl: '.swiper-button-next',
+    //             // prevEl: '.swiper-button-prev',
+    //             nextE1: '.swiper-button-next--second',
+    //             prevE1: '.swiper-button-prev--second',
+    //         },
+    //     },
+    //   },
 
     // And if we need scrollbar
     scrollbar: {
@@ -37,7 +41,12 @@ const swiper = new Swiper('.swiper-container', {
     },
 });
 
-
+nextSlide.addEventListener("click", () => {
+    swiper.slideNext();
+});
+prevSlide.addEventListener("click", () => {
+    swiper.slidePrev();
+});
 
 const burger = document.querySelector('#burger');
 const nav = document.querySelector('.nav');
@@ -62,16 +71,6 @@ if (target === overlay) {
     }
 });
 
-// for (let link of links) {
-//     links.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     burger.classList.remove("active");
-//     nav.classList.remove('active');
-//     overlay.classList.remove('active');
-//     html.classList.remove("overflow-hidden");
-//     }
-// });
-
 const anchors = document.querySelectorAll('a[href*="#"]');
 for (let anchor of anchors) {
   anchor.addEventListener("click", function (e) {
@@ -85,3 +84,17 @@ for (let anchor of anchors) {
     });
   });
 }
+
+
+let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
+
+// nextSlide.addEventListener('click', function(e){
+//     mySwiper.swipeTo(mySwiper.activeLoopIndex+1);
+// })
